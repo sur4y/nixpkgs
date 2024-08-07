@@ -11738,6 +11738,8 @@ self: super: with self; {
 
   pymetno = callPackage ../development/python-modules/pymetno { };
 
+  pymicro-vad = callPackage ../development/python-modules/pymicro-vad { };
+
   pymicrobot = callPackage ../development/python-modules/pymicrobot { };
 
   pymiele = callPackage ../development/python-modules/pymiele { };
