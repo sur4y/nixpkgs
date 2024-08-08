@@ -252,6 +252,19 @@ let
         };
       });
 
+      pyflume = super.pyflume.overridePythonAttrs (oldAttrs: rec {
+        version = "0.6.5";
+        src = fetchFromGitHub {
+          owner = "ChrisMandich";
+          repo = "PyFlume";
+          rev = "refs/tags/v${version}";
+          hash = "sha256-kIE3y/qlsO9Y1MjEQcX0pfaBeIzCCHk4f1Xa215BBHo=";
+        };
+        dependencies = oldAttrs.propagatedBuildInputs or [] ++ [
+          self.pytz
+        ];
+      });
+
       pytibber = super.pytibber.overridePythonAttrs (oldAttrs: rec {
         version = "0.28.2";
         src = fetchFromGitHub {
